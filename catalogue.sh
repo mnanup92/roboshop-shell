@@ -19,6 +19,5 @@ cp mongodb.repo /etc/yum.repos.d/mongo.repo
  mongosh --host mongodb.jdevops81.shop </app/db/master-data.js
 
  systemctl daemon-reload
-
  systemctl enable catalogue
- systemctl start catalogue
+ systemctl restart catalogue
