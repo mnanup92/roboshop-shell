@@ -110,15 +110,5 @@ maven_setup() {
   mv target/$app_name-1.0.jar $app_name.jar &>>$log_file
   status_check $?
 
-  print_heading "Install MySQL Client"
-  dnf install mysql -y &>>$log_file
-  status_check $1
-
-  for sql_file in schema app-user master-data; do
-    print_heading "Load SQl file - $sql_file"
-    mysql -h mysql.jdevops81.shop -uroot -p$MYSQL_ROOT_PASSWORD < /app/db/$sql_file.sql >>&$log_file
-
   systemd_setup
-
-
 }
