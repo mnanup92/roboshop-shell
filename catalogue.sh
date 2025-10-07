@@ -18,3 +18,5 @@ status_check $?
 print_heading "Restart Catalogue Service"
 systemctl restart catalogue &>>$log_file
 status_check $?
+
+#test
